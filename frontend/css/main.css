@@ -1,7 +1,13 @@
+@font-face {
+  font-family: a;
+  src: url(fonts/a.ttf);
+ }
+
 .wrapper {
   flex-direction: column;
   position: relative;
-  display: block;
+  display: flex;
+  font: a;
 }
 
 .header {
@@ -16,13 +22,18 @@
 .header_inner {
   display: flex;
   justify-content: space-between;
-  background: red;
+  background-color: rgba(21,55,108,0.8);
+}
+
+.header_transparenter {
+  background-color: rgba(21,55,108,0.65);
 }
 
 .header_actions {
   display: flex;
-  margin: auto;
+  margin-left: auto;
   align-items: center;
+  padding-right: 10px;
 }
 
 .slider {
@@ -33,17 +44,21 @@
 
 .header_logo {
   align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .logo {
     background: url(../images/logo.png) 0 0 no-repeat;
     background-size: contain;
-    width: 255px;
-    height: 100px;
     position: relative;
     display: block;
 }
-
+.call_us {
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 .call_us>a {
   position: relative;
   display: inline-block;
@@ -58,9 +73,7 @@
   background-size: 22px 22px;
   text-decoration: none;
   color: black;
-}
-.call_us>a:hover {
-  color: blue;
+  bottom: 2px;
 }
 
 .call_us>a:before {
@@ -87,6 +100,10 @@
   vertical-align: middle;
 }
 
+.btn:hover {
+  background: rgba(255,255,255,0.5);
+}
+
 .menu_toggle {
   position: relative;
   display: flex;
@@ -107,16 +124,16 @@
   top: 0;
   right: 0;
   display: block;
-  margin: 6px 0;
 }
 
 .hamburger_line:nth-child(2) {
   max-width: 70%;
   left: 30%;
+  margin: 6px 0;
 }
 
 .hamburger::after {
-  content: "Menu";
+  content: "Меню";
   position: absolute;
   right: 0;
   top: -2px;
@@ -131,9 +148,18 @@
 }
 
 @media (min-width: 1200px) {
+  .logo {
+    width: 255px;
+    height: 45px;
+  }
+
+  .call_us>a:hover {
+    color: blue;
+  }
+
   .slider {
-    padding-top: 100px;
-    min-height: 600px;
+    padding-top: 55px;
+    min-height: 400px;
   }
 
   .header_actions>div {
@@ -142,9 +168,18 @@
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
+  .logo {
+    width: 255px;
+    height: 35px;
+  }
+  
+  .call_us>a:hover {
+    color: blue;
+  }
+
   .slider {
-    padding-top: 90px;
-    min-height: 500px;
+    padding-top: 45px;
+    min-height: 300px;
   }
 
   .header_actions>div {
@@ -153,14 +188,23 @@
 }
 
 @media (max-width: 767px) {
+  .logo {
+    width: 165px;
+    height: 30px;
+  }
+
   .call_us>a {
+    font-size: 0;
     color: transparent;
-    height: 40px;
-    width: 40px;
+  }
+
+  .slider {
+    padding-top: 30px;
+    min-height: 250px;
   }
 
   .header_actions>div {
-    margin-left: 0px;
+    margin-left: 5px;
   }
 
   .get_call {
